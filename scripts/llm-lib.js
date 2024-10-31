@@ -484,6 +484,7 @@ Hooks.on('renderSettingsConfig', (app, html, data) => {
     // Append your custom form group to the settings window
     form.append(apiKeyFormGroup);
     form.append(secretKeyFormGroup);
+    form.append(baseUrlFormGroup);
 
     // Optionally, add an event listener to save the setting when the form is submitted
     // app.options.onSubmit = (e) => {
