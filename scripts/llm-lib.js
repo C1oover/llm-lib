@@ -448,6 +448,8 @@ Hooks.on('renderSettingsConfig', (app, html, data) => {
     const apiKeyHint = game.i18n.localize(`CHAT-BOT.settings.${llmSettings.SETTINGS.API_KEY}.Hint`);
     const secretKeyName = game.i18n.localize(`CHAT-BOT.settings.${llmSettings.SETTINGS.SECRET_KEY}.Name`);
     const secretKeyHint = game.i18n.localize(`CHAT-BOT.settings.${llmSettings.SETTINGS.SECRET_KEY}.Hint`);
+    const baseUrlName = game.i18n.localize(`CHAT-BOT.settings.${llmSettings.SETTINGS.BASE_URL}.Name`);
+    const baseUrlHint = game.i18n.localize(`CHAT-BOT.settings.${llmSettings.SETTINGS.BASE_URL}.Hint`);
 
     // Identify where to insert your custom field, e.g., at the end of the form
     const form = html.find(`[data-category="llm-lib"]`);
@@ -469,6 +471,14 @@ Hooks.on('renderSettingsConfig', (app, html, data) => {
         <label>${secretKeyName}:</label>
         <input type="password" name="${llmSettings.ID}.${llmSettings.SETTINGS.SECRET_KEY}" value="${game.settings.get(llmSettings.ID, llmSettings.SETTINGS.SECRET_KEY)}" data-dtype="String">
         <p class="notes">${secretKeyHint}</p>
+    `;
+
+    const baseUrlFormGroup = document.createElement('div');
+    baseUrlFormGroup.classList.add('form-group');
+    baseUrlFormGroup.innerHTML = `
+        <label>${baseUrlName}:</label>
+        <input type="password" name="${llmSettings.ID}.${llmSettings.SETTINGS.SECRET_KEY}" value="${game.settings.get(llmSettings.ID, llmSettings.SETTINGS.BASE_URL)}" data-dtype="String">
+        <p class="notes">${baseUrlHint}</p>
     `;
 
     // Append your custom form group to the settings window

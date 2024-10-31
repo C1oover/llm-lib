@@ -20,6 +20,10 @@
             "img_gen": {
               "Name": "Image Generation",
               "Hint": "Generate image along with NPC"
+            },
+            "base_url": {
+              "Name": "Base URL",
+              "Hint": "For use with local-llm (OpenAI compatible)"
             }
           }
     }
