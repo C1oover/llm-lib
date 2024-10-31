@@ -8,7 +8,8 @@ class llmSettings {
     API_KEY: "api_key",
     USE_API_KEY: "use_api_key",
     SECRET_KEY: "secret_key",
-    KEYS: "keys"
+    KEYS: "keys",
+    BASE_URL: "base_url"
   };
 
   static TEMPLATES = {
@@ -64,6 +65,16 @@ class llmSettings {
         scope: "world",
         config: false,
         hint: `CHAT-BOT.settings.${this.SETTINGS.SECRET_KEY}.Hint`,
+        restricted: true,
+    });
+
+    game.settings.register(this.ID, this.SETTINGS.BASE_URL, {
+        name: `CHAT-BOT.settings.${this.SETTINGS.BASE_URL}.Name`,
+        default: "",
+        type: String,
+        scope: "world",
+        config: false,
+        hint: `CHAT-BOT.settings.${this.SETTINGS.BASE_URL}.Hint`,
         restricted: true,
     });
   }
